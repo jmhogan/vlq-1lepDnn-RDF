@@ -17,11 +17,19 @@ scramv1 b
 git clone https://github.com/jmhogan/vlq-1lepDnn-RDF
 cd vlq-1lepDnn-RDF/
 ```
-- Find NanoAOD file to use
-``
+# LWTNN INCLUSION
+- Change into src area (should be one directory above vlq-1lepDnn-RDF)
+```
+cd ../
+cp -r ~bluetke/nobackup/YOURWORKINGAREA/CMSSW_11_0_0/src/lwtnn/
+scramv1 b
+```
+
 # TO RUN:
+- Find NanoAOD file to use
 If you intend to save a snapshot, make sure that the final .Snapshot at the very end of the script is uncommented. There's an optional place to start the analysis from a preselection .root file, which cuts down on time significatly. Thus, if you already have preselection root files, I reccomend utilizing that area. If not, the analysis takes anywhere from 30 minutes to 3 hours depending on the size of your input. To run on the command line, use the following:
 ```
 root -l callRDF.C\(\"Muon(OR)Electron\",\"testNumber\"\)
 ```
-Additionally, we're in the process of adding additional files for condor job submission.
+# TO DO:
+- Add additional files for condor job submission
